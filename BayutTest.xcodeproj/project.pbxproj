@@ -15,6 +15,9 @@
 		1368993225AE09FA00FBAC36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1368993025AE09FA00FBAC36 /* LaunchScreen.storyboard */; };
 		1368993D25AE09FA00FBAC36 /* BayutTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368993C25AE09FA00FBAC36 /* BayutTestTests.swift */; };
 		1368994825AE09FA00FBAC36 /* BayutTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368994725AE09FA00FBAC36 /* BayutTestUITests.swift */; };
+		1368995725AE1C4800FBAC36 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368995625AE1C4800FBAC36 /* Requestable.swift */; };
+		1368995925AE1C5600FBAC36 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368995825AE1C5600FBAC36 /* ServiceManager.swift */; };
+		1368996A25AE1EA100FBAC36 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368996925AE1EA100FBAC36 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		1368994325AE09FA00FBAC36 /* BayutTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BayutTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1368994725AE09FA00FBAC36 /* BayutTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayutTestUITests.swift; sourceTree = "<group>"; };
 		1368994925AE09FA00FBAC36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1368995625AE1C4800FBAC36 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		1368995825AE1C5600FBAC36 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		1368996925AE1EA100FBAC36 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		1368992425AE09F800FBAC36 /* BayutTest */ = {
 			isa = PBXGroup;
 			children = (
+				1368995A25AE1DFC00FBAC36 /* Modules */,
 				1368995525AE148100FBAC36 /* Managers */,
 				1368992525AE09F800FBAC36 /* AppDelegate.swift */,
 				1368992725AE09F800FBAC36 /* SceneDelegate.swift */,
@@ -132,8 +139,130 @@
 		1368995525AE148100FBAC36 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1368995625AE1C4800FBAC36 /* Requestable.swift */,
+				1368995825AE1C5600FBAC36 /* ServiceManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		1368995A25AE1DFC00FBAC36 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1368995B25AE1E0A00FBAC36 /* ProductList */,
+				1368995C25AE1E1400FBAC36 /* ProductDetails */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1368995B25AE1E0A00FBAC36 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				1368996225AE1E6100FBAC36 /* Protocols */,
+				1368996125AE1E5B00FBAC36 /* Router */,
+				1368996025AE1E5300FBAC36 /* Presenter */,
+				1368995F25AE1E4B00FBAC36 /* Entity */,
+				1368995E25AE1E4200FBAC36 /* Interactor */,
+				1368995D25AE1E3C00FBAC36 /* View */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		1368995C25AE1E1400FBAC36 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1368996625AE1E8E00FBAC36 /* Entity */,
+				1368996825AE1E8E00FBAC36 /* Interactor */,
+				1368996325AE1E8E00FBAC36 /* Presenter */,
+				1368996525AE1E8E00FBAC36 /* Protocols */,
+				1368996425AE1E8E00FBAC36 /* Router */,
+				1368996725AE1E8E00FBAC36 /* View */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		1368995D25AE1E3C00FBAC36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1368995E25AE1E4200FBAC36 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1368995F25AE1E4B00FBAC36 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1368996925AE1EA100FBAC36 /* Product.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		1368996025AE1E5300FBAC36 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1368996125AE1E5B00FBAC36 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1368996225AE1E6100FBAC36 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1368996325AE1E8E00FBAC36 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1368996425AE1E8E00FBAC36 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1368996525AE1E8E00FBAC36 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1368996625AE1E8E00FBAC36 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		1368996725AE1E8E00FBAC36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1368996825AE1E8E00FBAC36 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +397,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1368992A25AE09F800FBAC36 /* ViewController.swift in Sources */,
+				1368995725AE1C4800FBAC36 /* Requestable.swift in Sources */,
 				1368992625AE09F800FBAC36 /* AppDelegate.swift in Sources */,
 				1368992825AE09F800FBAC36 /* SceneDelegate.swift in Sources */,
+				1368995925AE1C5600FBAC36 /* ServiceManager.swift in Sources */,
+				1368996A25AE1EA100FBAC36 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
