@@ -10,15 +10,25 @@ import Foundation
 
 class Product: Codable {
     let createdAt, price, name, uid: String
-    let imageIDS: [String]
     let imageUrls, imageUrlsThumbnails: [String]
 
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"
         case price, name, uid
-        case imageIDS = "image_ids"
         case imageUrls = "image_urls"
         case imageUrlsThumbnails = "image_urls_thumbnails"
+    }
+    
+    required init(from decoder: Decoder) throws {
+
+        let container   = try decoder.container(keyedBy: CodingKeys.self)
+        createdAt           = try container.decode(String.self, forKey: .createdAt)
+        price      = try container.decode(String.self, forKey: .price)
+        name            = try container.decode(String.self, forKey: .name)
+        
+        imageUrls            = try container.decode([String].self, forKey: .imageUrls)
+        imageUrlsThumbnails            = try container.decode([String].self, forKey: .imageUrlsThumbnails)
+        uid            = try container.decode(String.self, forKey: .uid)
     }
     
     static func getProducts(completion: @escaping (ServiceResponse<ProductResponse>) -> ()) {
@@ -48,5 +58,5 @@ extension Product {
 }
 
 class ProductResponse: Codable {
-    let products: [Product]? = nil
+    let results: [Product]?
 }
