@@ -9,20 +9,6 @@
 import Foundation
 
 extension String {
-    
-    func dateText(inputFormat: String, outputFormat: String) -> String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = inputFormat
-
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = outputFormat
-
-        guard let date = dateFormatterGet.date(from: self) else { return "" }
-        return dateFormatterPrint.string(from: date)
-        
-        
-    }
-    
     func getFormatedDate(output:String,dateFormat:String)-> String{
 
        let dateFormatter = DateFormatter()
@@ -30,7 +16,7 @@ extension String {
        dateFormatter.dateFormat = dateFormat
 
        let dateFromInputString = dateFormatter.date(from: self)
-       dateFormatter.dateFormat = output//"dd MMM yyyy" // Here you can use any dateformate for output date
+       dateFormatter.dateFormat = output
        if(dateFromInputString != nil){
            return dateFormatter.string(from: dateFromInputString!)
        }
