@@ -36,6 +36,11 @@ class ProductListViewController: UIViewController, ActivityIndicatorPresenter {
         presenter?.fetchAllProducts()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
     private func registerCell() {
         listTableView.register(UINib(nibName: ProductListViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProductListViewCell.identifier)
     }

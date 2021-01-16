@@ -29,6 +29,7 @@ public extension ActivityIndicatorPresenter where Self: UIViewController {
             guard let welf = self else { return }
             let yPositionPadding: CGFloat = 70
             welf.activityIndicator.style = UIActivityIndicatorView.Style.large
+            welf.activityIndicator.color = .white
             welf.activityIndicator.frame = CGRect(x: 0, y: 0, width: 80, height: 80) //or whatever size you would like
             welf.activityIndicator.center = CGPoint(x: UIScreen.main.bounds.maxX/2, y: UIScreen.main.bounds.maxY/2 - yPositionPadding)
             welf.view.addSubview(welf.activityIndicator)
