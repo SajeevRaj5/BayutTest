@@ -28,7 +28,11 @@ public extension ActivityIndicatorPresenter where Self: UIViewController {
         DispatchQueue.main.async { [weak self] in
             guard let welf = self else { return }
             let yPositionPadding: CGFloat = 70
-            welf.activityIndicator.style = UIActivityIndicatorView.Style.large
+            if #available(iOS 13.0, *) {
+                welf.activityIndicator.style = UIActivityIndicatorView.Style.large
+            } else {
+                // Fallback on earlier versions
+            }
             welf.activityIndicator.color = .white
             welf.activityIndicator.frame = CGRect(x: 0, y: 0, width: 80, height: 80) //or whatever size you would like
             welf.activityIndicator.center = CGPoint(x: UIScreen.main.bounds.maxX/2, y: UIScreen.main.bounds.maxY/2 - yPositionPadding)
