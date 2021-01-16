@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIResponder {
+    static var identifier: String {
+        return "\(self)"
+    }
+}

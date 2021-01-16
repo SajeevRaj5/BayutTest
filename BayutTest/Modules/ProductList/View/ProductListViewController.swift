@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ProductListViewController: UIViewController {
+class ProductListViewController: UIViewController, ActivityIndicatorPresenter {
+    var activityIndicator = UIActivityIndicatorView()
 
     var presenter: ViewToPresenterProductListProtocol?
     
     var productListData = [ProductViewModel]() {
         didSet {
             DispatchQueue.main.async { [weak self] in
-                self?.listTableView.reloadData()
+                self?.listTableView?.reloadData()
             }
         }
     }
@@ -24,9 +25,14 @@ class ProductListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Products"
 
         registerCell()
         
+        showLoader()
+        
+        // fetch all products
         presenter?.fetchAllProducts()
     }
     
@@ -36,18 +42,41 @@ class ProductListViewController: UIViewController {
     
 }
 
+// Tableview delegates
+extension ProductListViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return productListData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let productCell = tableView.dequeueReusableCell(withIdentifier: ProductListViewCell.identifier, for: indexPath) as? ProductListViewCell else { return UITableViewCell() }
+        productCell.configureView(product: productListData[indexPath.row])
+
+        return productCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let navigation = navigationController else { return }
+        presenter?.showProductDetail(navigationController: navigation, forProductAt: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+
+// delegate methods to perform actions
 extension ProductListViewController: PresenterToViewProductListProtocol {
     func showProducts(products: [ProductViewModel]) {
         productListData = products
     }
     
     func showError(error: Error) {
-        
+        AlertController.show(type: .serviceError)
     }
     
     func dismissLoader() {
-        
+        hideLoader()
     }
-    
-    
 }

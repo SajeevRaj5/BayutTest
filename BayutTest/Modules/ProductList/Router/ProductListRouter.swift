@@ -26,5 +26,8 @@ class ProductListRouter: PresenterToRouterProtocol {
         return view
     }
     
-    
+    func showProductDetailView(navigationController: UINavigationController,  product: Product) {
+        let productDetailModule = ProductDetailRouter.createModule(with: product)
+        navigationController.pushViewController(productDetailModule, animated: true)
+    }
 }

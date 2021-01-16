@@ -26,6 +26,14 @@
 		1368997D25AF6A3900FBAC36 /* ProductListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368997C25AF6A3900FBAC36 /* ProductListInteractor.swift */; };
 		1368998025AF6CD100FBAC36 /* ResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368997F25AF6CD100FBAC36 /* ResponderExtension.swift */; };
 		1368998325AF78ED00FBAC36 /* ProductListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368998225AF78ED00FBAC36 /* ProductListRouter.swift */; };
+		13C66E1325B3237F00150E20 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E1225B3237F00150E20 /* URLExtension.swift */; };
+		13C66E1F25B3262800150E20 /* ProductDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E1E25B3262800150E20 /* ProductDetailRouter.swift */; };
+		13C66E2725B330E200150E20 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E2625B330E200150E20 /* ProductDetailsViewController.swift */; };
+		13C66E3525B331D100150E20 /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E3425B331D100150E20 /* ProductDetailPresenter.swift */; };
+		13C66E3A25B331F200150E20 /* ProductDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E3925B331F200150E20 /* ProductDetailProtocols.swift */; };
+		13C66E4225B33FF500150E20 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E4125B33FF500150E20 /* AlertController.swift */; };
+		13C66E4725B3401800150E20 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E4625B3401800150E20 /* ActivityIndicator.swift */; };
+		13C66E4C25B348B300150E20 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C66E4B25B348B300150E20 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +79,14 @@
 		1368997C25AF6A3900FBAC36 /* ProductListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractor.swift; sourceTree = "<group>"; };
 		1368997F25AF6CD100FBAC36 /* ResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtension.swift; sourceTree = "<group>"; };
 		1368998225AF78ED00FBAC36 /* ProductListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouter.swift; sourceTree = "<group>"; };
+		13C66E1225B3237F00150E20 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		13C66E1E25B3262800150E20 /* ProductDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRouter.swift; sourceTree = "<group>"; };
+		13C66E2625B330E200150E20 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		13C66E3425B331D100150E20 /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
+		13C66E3925B331F200150E20 /* ProductDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailProtocols.swift; sourceTree = "<group>"; };
+		13C66E4125B33FF500150E20 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		13C66E4625B3401800150E20 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		13C66E4B25B348B300150E20 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,12 +203,10 @@
 		1368995C25AE1E1400FBAC36 /* ProductDetails */ = {
 			isa = PBXGroup;
 			children = (
-				1368996625AE1E8E00FBAC36 /* Entity */,
-				1368996825AE1E8E00FBAC36 /* Interactor */,
-				1368996325AE1E8E00FBAC36 /* Presenter */,
-				1368996525AE1E8E00FBAC36 /* Protocols */,
-				1368996425AE1E8E00FBAC36 /* Router */,
-				1368996725AE1E8E00FBAC36 /* View */,
+				13C66E1D25B3261500150E20 /* Router */,
+				13C66E1925B3253000150E20 /* Protocols */,
+				13C66E1825B3252700150E20 /* Presenter */,
+				13C66E1725B3251300150E20 /* View */,
 			);
 			path = ProductDetails;
 			sourceTree = "<group>";
@@ -213,48 +227,6 @@
 				1368996925AE1EA100FBAC36 /* Product.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		1368996325AE1E8E00FBAC36 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		1368996425AE1E8E00FBAC36 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		1368996525AE1E8E00FBAC36 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		1368996625AE1E8E00FBAC36 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		1368996725AE1E8E00FBAC36 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1368996825AE1E8E00FBAC36 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		1368997525AF662100FBAC36 /* Protocols */ = {
@@ -285,6 +257,10 @@
 			isa = PBXGroup;
 			children = (
 				1368997F25AF6CD100FBAC36 /* ResponderExtension.swift */,
+				13C66E1225B3237F00150E20 /* URLExtension.swift */,
+				13C66E4125B33FF500150E20 /* AlertController.swift */,
+				13C66E4625B3401800150E20 /* ActivityIndicator.swift */,
+				13C66E4B25B348B300150E20 /* StringExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -293,6 +269,38 @@
 			isa = PBXGroup;
 			children = (
 				1368998225AF78ED00FBAC36 /* ProductListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		13C66E1725B3251300150E20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13C66E2625B330E200150E20 /* ProductDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13C66E1825B3252700150E20 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				13C66E3425B331D100150E20 /* ProductDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		13C66E1925B3253000150E20 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				13C66E3925B331F200150E20 /* ProductDetailProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		13C66E1D25B3261500150E20 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				13C66E1E25B3262800150E20 /* ProductDetailRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -430,18 +438,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				1368997A25AF670900FBAC36 /* ProductListPresenter.swift in Sources */,
+				13C66E4C25B348B300150E20 /* StringExtension.swift in Sources */,
+				13C66E1325B3237F00150E20 /* URLExtension.swift in Sources */,
+				13C66E1F25B3262800150E20 /* ProductDetailRouter.swift in Sources */,
 				1368992A25AE09F800FBAC36 /* ViewController.swift in Sources */,
+				13C66E3A25B331F200150E20 /* ProductDetailProtocols.swift in Sources */,
 				1368995725AE1C4800FBAC36 /* Requestable.swift in Sources */,
 				1368996C25AF5FD400FBAC36 /* ProductListViewController.swift in Sources */,
 				1368992625AE09F800FBAC36 /* AppDelegate.swift in Sources */,
 				1368997D25AF6A3900FBAC36 /* ProductListInteractor.swift in Sources */,
+				13C66E4225B33FF500150E20 /* AlertController.swift in Sources */,
 				1368997025AF640D00FBAC36 /* ProductListViewCell.swift in Sources */,
 				1368992825AE09F800FBAC36 /* SceneDelegate.swift in Sources */,
 				1368995925AE1C5600FBAC36 /* ServiceManager.swift in Sources */,
 				1368997725AF663700FBAC36 /* ProductListProtocols.swift in Sources */,
 				1368998025AF6CD100FBAC36 /* ResponderExtension.swift in Sources */,
 				1368998325AF78ED00FBAC36 /* ProductListRouter.swift in Sources */,
+				13C66E4725B3401800150E20 /* ActivityIndicator.swift in Sources */,
+				13C66E3525B331D100150E20 /* ProductDetailPresenter.swift in Sources */,
 				1368996A25AE1EA100FBAC36 /* Product.swift in Sources */,
+				13C66E2725B330E200150E20 /* ProductDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

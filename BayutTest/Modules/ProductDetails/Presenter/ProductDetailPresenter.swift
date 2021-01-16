@@ -13,6 +13,7 @@ class ProductDetailPresenter: ViewToPresenterProductDetailProtocol {
 
     var view: PresenterToViewProductDetailProtocol?
     
+    // show product details
     func showDetail() {
         guard let product = product else { return }
         view?.showDetailForProduct(product: product)

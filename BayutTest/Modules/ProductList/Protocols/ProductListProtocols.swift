@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // protocol to handle interaction from view to presenter
 protocol ViewToPresenterProductListProtocol {
@@ -16,6 +17,7 @@ protocol ViewToPresenterProductListProtocol {
     var products: [Product]? {get set}
     
     func fetchAllProducts()
+    func showProductDetail(navigationController: UINavigationController, forProductAt index: Int)
 }
 
 // protocol to handle interaction from presenter to view
@@ -41,4 +43,5 @@ protocol InteractorToPresenterProductListProtocol: class {
 // protocol to handle navigation
 protocol PresenterToRouterProtocol {
     static func createModule() -> ProductListViewController
+    func showProductDetailView(navigationController: UINavigationController,  product: Product)
 }
