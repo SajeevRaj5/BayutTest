@@ -26,6 +26,14 @@ class ProductListPresenter: ViewToPresenterProductListProtocol {
 extension ProductListPresenter: InteractorToPresenterProductListProtocol {
     func onSuccessProductsFetch(products: [Product]) {
         
+                var productViewModels = [ProductViewModel]()
+        
+        for product in products {
+            let productViewModel: ProductViewModel = (product.name, product.price, product.imageUrlsThumbnails.first ?? "")
+            productViewModels.append(productViewModel)
+        }
+        
+        view?.showProducts(products: productViewModels)
     }
     
     func onFailedProductsFetch(error: Error) {

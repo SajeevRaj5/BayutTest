@@ -10,12 +10,44 @@ import UIKit
 
 class ProductListViewController: UIViewController {
 
+    var presenter: ViewToPresenterProductListProtocol?
+    
+    var productListData = [ProductViewModel]() {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.listTableView.reloadData()
+            }
+        }
+    }
+
     @IBOutlet weak var listTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        registerCell()
+        
+        presenter?.fetchAllProducts()
     }
+    
+    private func registerCell() {
+        listTableView.register(UINib(nibName: ProductListViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProductListViewCell.identifier)
+    }
+    
+}
+
+extension ProductListViewController: PresenterToViewProductListProtocol {
+    func showProducts(products: [ProductViewModel]) {
+        productListData = products
+    }
+    
+    func showError(error: Error) {
+        
+    }
+    
+    func dismissLoader() {
+        
+    }
+    
     
 }
