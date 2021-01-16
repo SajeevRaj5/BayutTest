@@ -31,9 +31,9 @@ extension ProductDetailsViewController: PresenterToViewProductDetailProtocol {
     func showDetailForProduct(product: Product) {
         nameLabel.text = product.name
         priceLabel.text = product.price
-        dateLabel.text = product.createdAt
-        print(product.createdAt)
+        dateLabel.text = product.createdAt.getFormatedDate(output: "dd MMM yyyy", dateFormat: "yyyy-MM-dd HH:mm:ss.SSSSSS")
         
+        imageView?.image = UIImage(named: "productPlaceholder")
         guard let url = URL(string: product.imageUrls.first ?? "") else { return }
         url.image { [weak self] (image) in
             guard let productImage = image else { return }
